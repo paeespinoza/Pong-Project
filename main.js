@@ -18,7 +18,7 @@ if (pongCourt.getContext) {
   };
   var paddle1Stuff ={
     'xInit': 10,
-    'y': 180
+    'y': 180,
   };
   var paddle2Stuff ={
     'xInit' : 730
@@ -76,7 +76,7 @@ var animate = function (prop, val, duration) {
   var end = start + duration;
   var current = paddle1Stuff[prop];
   var distance = val - current;
-
+console.log(paddle1);
   var step = function() {
       var timestamp =new Date().getTime();
       var progress = Math.min((duration - (end -timestamp)) / duration, 1);
@@ -86,7 +86,7 @@ var animate = function (prop, val, duration) {
       };
     return step();
 }
-animate('y', 30, 1000);
+// animate('y', 30, 1000);
 
 // KEY CONTROL for PADDLE1--------------------------------------//
 //----------------------------------------------------//
@@ -95,17 +95,17 @@ document.body.addEventListener('keydown', function(e){
   var info = meta(e);
   if(info) {
     e.preventDefault();
-    animate(info[0], paddle1Stuff[info[0]] + info[1], 1000);
+    animate(info[0], paddle1Stuff[info[0]] + info[1], 200);
 
   };
 });
 // KEY DOWN EVENT
 document.body.addEventListener('keyup', function(e) {
     var info = meta(e);
-
+    // console.log(e)
     if (info) {
         e.preventDefault();
-        animate(info[0], paddle1Stuff[info[0]], 1000);
+        animate(info[0], paddle1Stuff[info[0]], 200);
 
     };
 });
@@ -117,14 +117,14 @@ var meta = function(e) {
   var prop = 'y';
   var mult = 1;
 //
-  if(e.which < 37 || e.which > 40) {
+  if(e.which != 38 && e.which != 40) {
       return false;
   }
-  if (e.which === 37 || e.which === 38) {
+  if (e.which === 38) {
         mult = -1;
     }
 
-  if(e.which === 38 || e.which === 40) {
+  if(e.which === 40) {
     prop = 'y';
   }
   return[prop, mult * distance];
