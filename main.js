@@ -1,5 +1,6 @@
 // PONG COURT
 var pongCourt = document.getElementById ('canvas');
+// var pongCourt = document.getElementById ('titleCanvas');
 var context = pongCourt.getContext('2d');
 var playerScores = pongCourt.getContext('2d');
 var paddle1 = pongCourt.getContext('2d');
@@ -46,7 +47,7 @@ if (pongCourt.getContext) {
     context.fillStyle='purple';
     context.fillRect(0, 0, 1000, 1000);
     context.font = "30px Terminator Real NFI";
-    context.fillStyle = 'white'
+    context.fillStyle = '#CAEDF9'
     context.fillText(paddle1Stuff.score, 25,50);
     context.fillText(paddle2Stuff.score , 700,50);
 
@@ -54,8 +55,8 @@ if (pongCourt.getContext) {
 
 
     // CENTER DIVIDER\\
-    context.fillStyle = 'grey' ;
-    context.fillRect(365, 0, 12, 400);
+    context.fillStyle = '#24A5BA' ;
+    context.fillRect(365, 0, 12, 404);
     // PADDLE ONE\\
     paddle1.beginPath();
     paddle1.rect(paddle1Stuff.xInit, paddle1Stuff.y, generic.width, generic.height);

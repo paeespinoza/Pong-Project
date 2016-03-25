@@ -10,3 +10,15 @@
     left: 0;
     right: 0;
 }
+
+.title {
+  color:#24A5BA;
+  text-align: center;
+  font-size: 80px;
+  font-family: "title";
+}
+
+@font-face{
+font-family: "title";
+ src: url("PROMETHEUS.ttf");
+}
